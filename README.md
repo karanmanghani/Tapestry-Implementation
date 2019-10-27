@@ -43,15 +43,11 @@ If we encounter another process, with the hash 1234, the process would reside at
 Since, we could have multiple options for a given entry in the routing table, we select the one that is closest to the hash of the root process.  
 Improvements for fault-tolerance:  
 Here, to improve robustness and avoid failure, we store multiple references in each slot. Here, we are storing 3 references that are sorted in the order of closeness to the local node.   
-<br/>
 ![nodes-image](/screenshots/2c62.PNG)
-<br/>
 Thus, in our program, if a process crashes, and we were supposed to find another process via this crashed process, then we find another route, by selecting the second one. If the second one also crashes, we go for the third one.
 
-<br/>
 ![rerouting](/screenshots/rerouting.PNG)
 
-<br/>
 If the destination, i.e. requested node has crashed, then we return the message,
 
 <br/>
