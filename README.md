@@ -48,22 +48,20 @@ Thus, in our program, if a process crashes, and we were supposed to find another
 
 ![rerouting](/screenshots/rerouting.PNG)
 
-If the destination, i.e. requested node has crashed, then we return the message,
-
-<br/>
+If the destination, i.e. requested node has crashed, then we return the message.
 ![dest](/screenshots/dest.PNG)
 
-<br/>
+
 Since the requesting process might not know if its request process has crashed, then doesn’t. Thus, if a request was made to the node that has crashed, we store the number of hops in the requesting processes’ state as “-1”.    Then, based on future availability, if the node revives, the number of hops would easily be reset and we could get the true value of number of hops.  
 The below image for the routing table of hash 6706 explains the idea:  
 a.	The first part is the routing table of the node 6706  
 b.	The second list is the random requests for the node 6706.  
 c.	The third list stores the number of hops it took for each request.   
 d.	Finally, we output the max number of hops for 6706. 
-<br/> 
+<
 ![25fc](/screenshots/25fc.PNG)
 
-<br/>
+
 Since destination 25FC wasn’t available, the processes’ state stores -1 for 25FC.  
 
 
