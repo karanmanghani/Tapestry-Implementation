@@ -17,7 +17,7 @@ Part 2 in the folder "Project3bonus" covers the implementation along with fault 
 ## Steps to run the code: 
 1.	Clone/Download the file
 2.	Using CMD/ terminal, go the directory where you have downloaded the zip file
-3.	Type  ‘cd Gossip-and-Push-Sum-Algorithm-master' (to enter the project directory)
+3.	Enter the project's source code directory (Project3 or Project3-bonus)
 4.	Run the command “mix run project3.exs arguments”
 5.	Note: Type the arguments based on the implementation given below.
 
@@ -48,7 +48,7 @@ Thus, in our program, if a process crashes, and we were supposed to find another
 
 ![rerouting](/screenshots/rerouting.PNG)  
 
-If the destination, i.e. requested node has crashed, then we return the message.
+If the destination, i.e. requested node has crashed, then we return the message.  
 ![dest](/screenshots/dest.PNG)  
 
 
