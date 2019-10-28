@@ -33,9 +33,8 @@ mix run project3.exs numnodes numrequests numnodesfailed
 
 ## Implementation: 
 
-Each process maintains a routing table which stores references (hash values in our project) for a subset of the process in the system and it is defined by 2 parameters:
-1.	Level 
-2.	Slot  
+Each process maintains a routing table which stores references (hash values in our project) for a subset of the process in the system and it is defined by 2 parameters, its LEVEL and its SLOT.    
+
 Each level signifies the number of characters that matched for a given process in the system with the process whose routing table we are creating. Hence, based on the number of bits of the hash value, the number of levels is set.  If we use an 8-bit hash, we have 8 levels (ranging from level 0 through 7 in our project, where level 0 signifies no matches and level 7 signifies all but the last bit is the same) This method is also known as prefix-matching.   The slot signifies the column where the process would reside.  
 Example: Consider we are creating a routing table for process 12ab.  
 If we encounter a process, with hash 0f01, since prefix-match = 0, the process will reside at level 0 and slot 0 (the character of the process where match failed)  
