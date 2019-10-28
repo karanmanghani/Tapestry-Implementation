@@ -43,13 +43,13 @@ If we encounter another process, with the hash 1234, the process would reside at
 Since, we could have multiple options for a given entry in the routing table, we select the one that is closest to the hash of the root process.  
 Improvements for fault-tolerance:  
 Here, to improve robustness and avoid failure, we store multiple references in each slot. Here, we are storing 3 references that are sorted in the order of closeness to the local node.   
-![nodes-image](/screenshots/2c62.PNG)
+![nodes-image](/screenshots/2c62.PNG)  
 Thus, in our program, if a process crashes, and we were supposed to find another process via this crashed process, then we find another route, by selecting the second one. If the second one also crashes, we go for the third one.
 
-![rerouting](/screenshots/rerouting.PNG)
+![rerouting](/screenshots/rerouting.PNG)  
 
 If the destination, i.e. requested node has crashed, then we return the message.
-![dest](/screenshots/dest.PNG)
+![dest](/screenshots/dest.PNG)  
 
 
 Since the requesting process might not know if its request process has crashed, then doesn’t. Thus, if a request was made to the node that has crashed, we store the number of hops in the requesting processes’ state as “-1”.    Then, based on future availability, if the node revives, the number of hops would easily be reset and we could get the true value of number of hops.  
@@ -57,15 +57,15 @@ The below image for the routing table of hash 6706 explains the idea:
 a.	The first part is the routing table of the node 6706  
 b.	The second list is the random requests for the node 6706.  
 c.	The third list stores the number of hops it took for each request.   
-d.	Finally, we output the max number of hops for 6706. 
-<
-![25fc](/screenshots/25fc.PNG)
+d.	Finally, we output the max number of hops for 6706.  
+
+![25fc](/screenshots/25fc.PNG)  
 
 
 Since destination 25FC wasn’t available, the processes’ state stores -1 for 25FC.  
 
 
-## Maximum number of nodes tested for the above implementation:
+## Maximum number of nodes tested for the above implementation:  
 Nodes: 8000  
 Requests: 3  
-![max](/screenshots/maximum .PNG)
+![max](/screenshots/maximum .PNG)  
